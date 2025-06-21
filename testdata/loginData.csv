@@ -1,0 +1,3 @@
+email,password,expectedResult
+marcelo@email.com,marcelo123@,Valid
+invaliduser@example.com,wrongpassword,Invalid
