@@ -20,34 +20,13 @@ public class ProductSearchPage extends BasePage {
 
         getWait().until(ExpectedConditions.visibilityOfElementLocated(searchBox)).sendKeys(productName);
         getWait().until(ExpectedConditions.visibilityOfElementLocated(searchBox)).submit();
-
-        //WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        //WebElement waitingSearchBox = wait.until(ExpectedConditions.visibilityOfElementLocated(searchBox));
-        //waitingSearchBox.sendKeys(productName);
-        //waitingSearchBox.submit();
-
-        //driver.findElement(searchBox).sendKeys(productName);
-        //driver.findElement(searchBox).submit();
     }
 
     public String getFirstProductName() {
         return getWait().until(ExpectedConditions.visibilityOfElementLocated(searchResult)).getText();
-
-        //WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        //WebElement waitingSearchResult = wait.until(ExpectedConditions.visibilityOfElementLocated(searchResult));
-        //return waitingSearchResult.getText();
-
-        //WebElement product = driver.findElement(searchResult);
-        //return product.getText();
     }
 
     public void clickFirstProduct() {
         getWait().until(ExpectedConditions.visibilityOfElementLocated(searchResult)).click();
-
-        //WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        //WebElement waitingSearchResult = wait.until(ExpectedConditions.elementToBeClickable(searchResult));
-        //waitingSearchResult.click();
-
-        //driver.findElement(searchResult).click();
     }
 }

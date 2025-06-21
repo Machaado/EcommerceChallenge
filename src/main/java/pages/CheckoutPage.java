@@ -41,10 +41,8 @@ public class CheckoutPage extends BasePage{
     }
 
     public void fillShippingInformation(String street, String city, String state, String zip, String country, String phone) {
-        //WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 
         getWait().until(ExpectedConditions.visibilityOfElementLocated(fillStreetAddress)).sendKeys(street);
-        //wait.until(ExpectedConditions.visibilityOfElementLocated(fillStreetAddress)).sendKeys(street);
 
         driver.findElement(fillCity).sendKeys(city);
 
@@ -70,44 +68,20 @@ public class CheckoutPage extends BasePage{
 
     public void clickNextButton() {
         getWait().until(ExpectedConditions.elementToBeClickable(nextBtn)).click();
-
-        //WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        //WebElement waitingNextBtn = wait.until(ExpectedConditions.elementToBeClickable(nextBtn));
-        //waitingNextBtn.click();
-
-        //driver.findElement(nextBtn).click();
     }
 
     public String getTextButtonPlaceOrder() {
         return getWait().until(ExpectedConditions.visibilityOfElementLocated(getPlaceOrderBtn)).getText();
-
-        //WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        //WebElement placeOrderbtn = wait.until(ExpectedConditions.visibilityOfElementLocated(getPlaceOrderBtn));
-        //return placeOrderbtn.getText();
     }
 
     public void clickPlaceOrder() {
         getWait().until(ExpectedConditions.invisibilityOfElementLocated(loadingMask));
         getWait().until(ExpectedConditions.visibilityOfElementLocated(getPlaceOrderBtn)).click();
-
-        //WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        //WebElement placeOrderBtn = wait.until(ExpectedConditions.elementToBeClickable(getPlaceOrderBtn));
-        //wait.until(ExpectedConditions.invisibilityOfElementLocated(By.cssSelector(".loading-mask")));
-        //placeOrderBtn.click();
     }
 
     public String getConfirmPurschaseText() {
         getWait().until(ExpectedConditions.urlContains("/checkout/onepage/success/"));
         return getWait().until(ExpectedConditions.visibilityOfElementLocated(getTextConfirmPurchase)).getText();
-
-        //WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
-
-
-        //wait.until(ExpectedConditions.urlContains("/checkout/onepage/success/"));
-
-
-        //WebElement confirmMsg = wait.until(ExpectedConditions.visibilityOfElementLocated(getTextConfirmPurchase));
-        //return confirmMsg.getText();
     }
 
 }

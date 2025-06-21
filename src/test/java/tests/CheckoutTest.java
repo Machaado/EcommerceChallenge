@@ -32,17 +32,15 @@ public class CheckoutTest extends BaseTest{
         cartPage.selectColor();
         cartPage.addToCart();
 
-        Thread.sleep(3000); // I INSERTED ".SLEEP" BECAUSE WHEN WE INSERT AN ITEM IN THE CART, ITS NOT IMMEDIATE THE ITEM GET INSERTED IN THE CART, HAS A DELAY WHEN WE TRY TO INSERT A ITEM IN THE CART.
+        Thread.sleep(4000); // I INSERTED ".SLEEP" BECAUSE WHEN WE INSERT AN ITEM IN THE CART, ITS NOT IMMEDIATE THE ITEM GET INSERTED IN THE CART, HAS A DELAY WHEN WE TRY TO INSERT A ITEM IN THE CART.
         cartPage.openCart();
         cartPage.clickCheckoutBtn();
         Thread.sleep(3000); // I INSERTED .SLEEP BECAUSE NEED TO WAIT THE IF CHECKS
 
         if (!checkoutPage.isAddressSaved()) {
-            //checkoutPage.clickAddNewAddress();
             checkoutPage.fillShippingInformation(street, city, state, zip, country, phone);
         }
 
-        //checkoutPage.fillShippingInformation(street, city, state, zip, country, phone);
         checkoutPage.selectShippingMethod(shipping);
         checkoutPage.clickNextButton();
 
