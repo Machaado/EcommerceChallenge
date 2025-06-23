@@ -1,3 +1,2 @@
-streetAddress,city,state,zipCode,country,phone,shipping
-Street XYZ 123,Jacareí,São Paulo,01000-000,Brazil,11999999999,Flat Rate
-123 Test Street,New York,New York,10001,United States,1234567890,Flat Rate
+streetAddress,city,state,zipCode,country,phone,shipping,email,password,product
+Street XYZ 123,Jacareí,São Paulo,01000-000,Brazil,11999999999,Flat Rate,marcelo@email.com,marcelo123@,Breathe

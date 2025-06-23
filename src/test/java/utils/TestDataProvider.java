@@ -15,7 +15,7 @@ public class TestDataProvider {
         CSVReader reader = new CSVReader(new FileReader("testdata/loginData.csv"));
         List<Object[]> data = new ArrayList<>();
         String[] line;
-        reader.readNext(); // Pular cabeçalho
+        reader.readNext();
 
         while ((line = reader.readNext()) != null) {
             data.add(line);
@@ -29,8 +29,20 @@ public class TestDataProvider {
         CSVReader reader = new CSVReader(new FileReader("testdata/checkoutData.csv"));
         List<Object[]> data = new ArrayList<>();
         String[] line;
-        reader.readNext(); // Pula cabeçalho
+        reader.readNext();
+        while ((line = reader.readNext()) != null) {
+            data.add(line);
+        }
+        reader.close();
+        return data.toArray(new Object[0][]);
+    }
 
+    @DataProvider(name = "productData")
+    public static Object[][] getProductData() throws IOException, CsvValidationException {
+        CSVReader reader = new CSVReader(new FileReader("testdata/productData.csv"));
+        List<Object[]> data = new ArrayList<>();
+        String[] line;
+        reader.readNext();
         while ((line = reader.readNext()) != null) {
             data.add(line);
         }

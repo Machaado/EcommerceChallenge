@@ -13,7 +13,7 @@ import static org.testng.AssertJUnit.assertTrue;
 public class CheckoutTest extends BaseTest{
 
     @Test(dataProvider = "checkoutData", dataProviderClass = TestDataProvider.class)
-    public void testCheckout(String street, String city, String state, String zip, String country, String phone, String shipping) throws InterruptedException {
+    public void testCheckout(String street, String city, String state, String zip, String country, String phone, String shipping, String email, String password, String product) throws InterruptedException {
         ProductSearchPage searchPage = new ProductSearchPage(driver);
         CartPage cartPage = new CartPage(driver);
         CheckoutPage checkoutPage = new CheckoutPage(driver);
@@ -22,11 +22,11 @@ public class CheckoutTest extends BaseTest{
         driver.get("https://magento.softwaretestingboard.com/");
 
         loginPage.clickLoginInHomePage();
-        loginPage.enterEmail("marcelo@email.com");
-        loginPage.enterPassword("marcelo123@");
+        loginPage.enterEmail(email);
+        loginPage.enterPassword(password);
         loginPage.clickLogin();
 
-        searchPage.searchProduct("Breathe");
+        searchPage.searchProduct(product);
         searchPage.clickFirstProduct();
         cartPage.selectSize();
         cartPage.selectColor();
