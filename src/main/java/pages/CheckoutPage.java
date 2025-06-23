@@ -34,12 +34,6 @@ public class CheckoutPage extends BasePage{
         return driver.findElements(By.cssSelector(".shipping-address-item")).size() > 0;
     }
 
-    public void clickAddNewAddress() {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        WebElement newAddressButton = wait.until(ExpectedConditions.elementToBeClickable(By.className("action-show-popup")));
-        newAddressButton.click();
-    }
-
     public void fillShippingInformation(String street, String city, String state, String zip, String country, String phone) {
 
         getWait().until(ExpectedConditions.visibilityOfElementLocated(fillStreetAddress)).sendKeys(street);

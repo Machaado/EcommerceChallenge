@@ -17,8 +17,4 @@ public class BasePage {
         return new WebDriverWait(driver, Duration.ofSeconds(timeout));
     }
 
-    public String getPageTitle() {
-        return driver.getTitle();
-    }
-
 }
